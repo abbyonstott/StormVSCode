@@ -1,0 +1,25 @@
+{
+    "name": "storm",
+    "displayName": "Storm",
+    "description": "Storm is a general-purpose programming language.",
+    "version": "0.1.0",
+    "engines": {
+        "vscode": "^1.43.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "storm",
+            "aliases": ["Storm", "storm"],
+            "extensions": [".storm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "storm",
+            "scopeName": "source.storm",
+            "path": "./syntaxes/storm.tmLanguage.json"
+        }]
+    }
+}
