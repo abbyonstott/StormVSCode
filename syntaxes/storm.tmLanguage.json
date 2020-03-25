@@ -77,7 +77,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.function.storm",
-					"match": "((?<=(func))\\w+(?=\\())|(\\w+(?=\\())"
+					"match": "((?<=func)\\w+(?=\\(|.+\\())|(\\w+(?=\\(|.+\\())"
 				},
 				{
 					"name": "variable.name",

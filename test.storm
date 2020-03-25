@@ -1,4 +1,4 @@
-func test(arg1, arg2) {
+func test (arg1, arg2) {
 	write("value\n", arg2);
 	value = 3;
 	return value;
@@ -9,4 +9,4 @@ var = 3;
 test(var, "lit");
 // this is a comment
 
-write(test(arg1, arg2), "loc");
+write ( test(arg1, arg2), "loc");
