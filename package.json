@@ -3,7 +3,7 @@
     "publisher": "stormprograms",
     "displayName": "Storm",
     "description": "Storm is a general-purpose programming language.",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "repository": "https://github.com/ethanonstott/StormVSCode",
     "engines": {
         "vscode": "^1.43.0"

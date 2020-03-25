@@ -19,22 +19,77 @@
 		},
 		{
 			"include": "#constants"
+		},
+		{
+			"include": "#pattern-arguments"
 		}
 	],
 	"repository": {
+		"arguments": {
+			"patterns": [
+				{
+					"include": "#pattern-arguments"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#entities"
+				},
+				{
+					"include": "#punctuation"
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [
 				{
 					"name": "keyword.control.storm",
-					"match": "\\b(if|while|for|return)\\b"
+					"match": "\\b(return)\\b"
 				},
 				{
 					"name": "keyword.storm",
 					"match": "\\b(func)\\b"
 				},
 				{
-					"name": "keyword.operator",
+					"name": "keyword.operator.storm",
 					"match": "="
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.terminator.line.storm",
+					"match": ";"
+				},
+				{
+					"name": "punctuation.separator.storm",
+					"match": ","
+				},
+				{
+					"name": "punctuation.brackets.storm",
+					"match": "{|}"
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"name": "entity.name.function.storm",
+					"match": "=*\\w+(?=\\s*\\()"
+				},
+				{
+					"name": "variable.name.storm",
+					"match": "[^\\d\\s]\\w*\\s*(?=;|=)"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\d+"
 				}
 			]
 		},
@@ -49,53 +104,33 @@
 				}
 			]
 		},
-		"punctuation": {
-			"patterns": [
-				{
-					"name": "punctuation.terminator.line.storm",
-					"match": ";"
-				},
-				{
-					"name": "punctuation.definition.brackets.storm",
-					"match": "\\(|\\)|{|}|[|]"
-				},
-				{
-					"name": "punctuation.separater.comma.storm",
-					"match": ","
+		"pattern-arguments": {
+			"begin": "\\(",
+			"end": "\\)",
+			"beginCaptures": {
+				"0": { 
+					"name": "punctuation.paren.open.storm" 
 				}
-			]
-		},
-		"constants": {
-			"patterns": [
-				{
-					"name": "constant.numeric",
-					"match": "\\d+"
+			},
+			"endCaptures": {
+				"0": { 
+					"name": "punctuation.paren.close.storm" 
 				}
-			]
-		},
-		"entities": {
+			},
+			"name":"arguments.group.storm",
 			"patterns": [
 				{
-					"name": "entity.name.function.storm",
-					"match": "((?<=func)\\w+(?=\\(|.+\\())|(\\w+(?=\\(|.+\\())"
-				},
-				{
-					"name": "variable.name",
-					"match": "\\w+(?=.=)"
+					"include": "#arguments"
 				},
 				{
 					"name": "variable.parameter.storm",
-					"match": "\\w+(?=.+\\)|.+,)"
+					"match": "\\w"
 				}
 			]
 		},
 		"comments": {
-			"patterns": [
-				{
-					"name": "comment.line.double-slash.storm",
-					"match": "\/\/.*"
-				}
-			]
+			"name": "comment.line.double-slash.storm",
+			"match": "\/\/.*"
 		}
 	},
 	"scopeName": "source.storm"

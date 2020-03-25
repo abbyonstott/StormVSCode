@@ -1,12 +1,27 @@
-func test (arg1, arg2) {
+func test (arg1, otherarg) {
 	write("value\n", arg2);
 	value = 3;
 	return value;
 }
 
-var = 3;
+var = 32;
+
+y = var;
 
 test(var, "lit");
 // this is a comment
 
-write ( test( arg1 , arg2 ), "loc");
+write ( test ( arg1 , arg2 ), "loc");
+
+func a(value) {
+	value = 3;
+	return value;	
+}
+
+b = a(2);
+
+func n(num) {
+	return num;
+}
+
+x = n(b);
