@@ -85,7 +85,7 @@
 				},
 				{
 					"name": "variable.parameter.storm",
-					"match": "\\w+(?=(\\))|,)"
+					"match": "\\w+(?=.+\\)|.+,)"
 				}
 			]
 		},

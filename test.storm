@@ -9,4 +9,4 @@ var = 3;
 test(var, "lit");
 // this is a comment
 
-write ( test(arg1, arg2), "loc");
+write ( test( arg1 , arg2 ), "loc");
